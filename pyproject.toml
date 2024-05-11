@@ -1,0 +1,87 @@
+[build-system]
+requires = ["hatchling==1.21.1"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+path = "artless/__init__.py"
+
+[project]
+name = "artless-framework"
+dynamic = ["version"]
+authors = [
+  {name = "Peter Bro", email = "p3t3rbr0@gmail.com"},
+]
+description = "Artless and minimalistic web framework without dependencies, working over WSGI."
+keywords = ["artless", "minimalistic", "web", "framework"]
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Development Status :: 1 - Planning",
+    "Environment :: Web Environment",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: Internet :: WWW/HTTP :: WSGI :: Application",
+    "Topic :: Software Development",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Software Development :: Libraries :: Application Frameworks",
+    "Typing :: Typed"
+]
+
+[project.urls]
+Homepage = "https://github.com/p3t3rbr0/py3-artless-framework"
+Documentation = "https://github.com/p3t3rbr0/py3-artless-framework/blob/master/README.md"
+Repository = "https://github.com/p3t3rbr0/py3-artless-framework.git"
+Issues = "https://github.com/p3t3rbr0/py3-artless-framework/issues"
+Changelog = "https://github.com/p3t3rbr0/py3-artless-framework/blob/master/CHANGELOG.md"
+
+[project.optional-dependencies]
+build = ["build==1.2.1", "twine==5.0.0"]
+dev = [
+    "coverage==7.5.1",
+    "mypy==1.10.0",
+    "isort==5.13.2",
+    "flake8==7.0.0",
+    "black==24.4.2",
+    "pydocstyle==6.3.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["artless"]
+exclude = ["venv"]
+
+[tool.hatch.build.targets.sdist]
+exclude = ["venv"]
+
+[tool.mypy]
+exclude = ["tests"]
+ignore_missing_imports = true
+
+[tool.isort]
+multi_line_output = 3
+include_trailing_comma = true
+
+[tool.pydocstyle]
+inherit = false
+convention = "google"
+match-dir = "^(?!tests|.docs).+$"
+
+[tool.coverage.report]
+exclude_lines = [
+    "pass",
+    "\\.\\.\\.",
+    "def __str__",
+    "def __getattr__",
+]
+
+[tool.coverage.run]
+branch = true
+
+[tool.coverage.html]
+directory = "coverage_report"
