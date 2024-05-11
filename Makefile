@@ -28,7 +28,7 @@ build-wheel:
 build: build-sdist build-wheel
 
 upload:
-	twine upload dist/*
+	twine upload --repository pypi dist/*
 
 format:
 	$(BLACK) --line-length 100 --fast artless/
