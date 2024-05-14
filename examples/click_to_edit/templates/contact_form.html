@@ -1,0 +1,36 @@
+<form hx-put="/contact/1" hx-target="this" hx-swap="outerHTML">
+    <fieldset>
+        <label>
+            First name
+            <input
+                type="text"
+                name="firstname"
+                placeholder="First name"
+                autocomplete="given-name"
+                value="@firstname"
+            />
+        </label>
+        <label>
+            Last name
+            <input
+                type="text"
+                name="lastname"
+                placeholder="Last name"
+                autocomplete="given-name"
+                value="@lastname"
+            />
+        </label>
+        <label>
+            Email
+            <input
+                type="text"
+                name="email"
+                placeholder="Email"
+                autocomplete="email"
+                value="@email"
+            />
+        </label>
+    </fieldset>
+    <button>Submit</button>
+    <button class="contrast" hx-get="/contact/1">Cancel</button>
+</form>

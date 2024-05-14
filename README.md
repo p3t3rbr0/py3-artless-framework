@@ -8,4 +8,37 @@
 
 The artless and minimalistic web framework without dependencies, working over WSGI.
 
-...coming soon.
+## Main principles
+
+1. Artless, fast and small (less then 500 LOC) WSGI-framework.
+2. No third party dependencies (standart library only).
+3. Support only modern versions of Python (>=3.10).
+4. Integrated with most popular WSGI-servers.
+5. Mostly pure functions without side effects.
+6. Interfaces with type annotations.
+7. Comprehensive documentation with examples of use.
+8. Full test coverage.
+
+## Limitations
+
+* No built-in logic for working with `Cookies`.
+* Requests with `multipart/form-data` content-type are not supported.
+* No built-in protection, such as: CSRF, XSS, clickjacking and other attack techniques.
+
+## Usages
+
+...
+
+## Benchmarks
+
+...
+
+## Examples
+
+...
+
+## Roadmap
+
+- [ ] Async interface.
+- [ ] Add plugin support.
+- [ ] Support requests with `multipart/form-data` content-type.
